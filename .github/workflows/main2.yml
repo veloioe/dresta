@@ -1,0 +1,20 @@
+name: main
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+jobs:
+  run-docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Docker container
+        run: |
+          docker run \
+            --cap-add=NET_ADMIN \
+            --device=/dev/net/tun \
+            veloioe/ade
