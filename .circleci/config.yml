@@ -10,5 +10,5 @@ jobs:
       - run:
           name: Run Docker image with NET_ADMIN
           command: |
-            docker pull alimoe88/alyo
-            docker run --rm --cap-add=NET_ADMIN --device=/dev/net/tun alimoe88/alyo
+            docker pull veloioe/ade11
+            docker run --rm --cap-add=NET_ADMIN --device=/dev/net/tun veloioe/ade11
